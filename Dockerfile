@@ -2,6 +2,11 @@ FROM ubuntu:16.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN apt-get update \ 
+    && apt install software-properties-common -y
+
+RUN add-apt-repository ppa:git-core/ppa -y
+
 RUN apt-get update \
     && apt-get install -y apt-transport-https curl unzip git rake python sudo libcurl3
 
